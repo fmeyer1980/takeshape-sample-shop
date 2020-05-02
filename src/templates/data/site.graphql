@@ -1,6 +1,9 @@
 query {
   settings: getSiteSettings {
     siteTitle
+     color {
+      hex
+    }
   }
   categories: getCategoryList {
     total
