@@ -1,0 +1,50 @@
+.header{
+    display: flex;
+    align-items: center;
+    height: 5em;
+
+    .logo{
+        height: 40%;
+        width: auto;
+        display: block;
+        color: inherit;
+
+        svg{
+            fill: currentColor;
+            height: 100%;
+        }
+    }
+
+    .main-nav{
+        margin-left: auto;
+
+        &__menu{
+            display: flex;
+
+            &__item{
+                padding: 0 1rem;
+
+                &.active{
+
+                    a{
+                        border-color: var(--color-black);
+                    }
+                    
+                }
+
+                &__link{
+                    position: relative;
+                    font-size: 0.875em;
+                    color: inherit;
+                    font-weight: 600;
+                    padding: 0 .1em .7em;
+                    display: block;
+                    border-bottom: 3px solid transparent;
+
+                }
+            }
+        }
+    }
+
+
+}

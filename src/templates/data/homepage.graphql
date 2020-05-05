@@ -1,19 +1,6 @@
 query {
   page: getHomepage {
     title
-    hero {
-      image {
-        path
-      }
-      featuredProduct {
-        name
-        image {
-          path
-        }
-        price
-        salePrice
-      }
-    }
     featuredCollections {
       title
       image {

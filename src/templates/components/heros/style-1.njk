@@ -1,0 +1,25 @@
+<div class="[ hero ] [ d-grid grid-cols-1 md:grid-cols-2 ]">
+    {% for collection in page.featuredCollections %}
+        <a class="item" href="{{ collection | route('collection') }}">
+                <img class="[ hero__image ] [ span-12 sm:span-7 d-none sm:d-block ]"
+                    width="375" height="250"
+                    sizes="(max-width: 1400px) 100vw, 1400px"
+                    srcset="
+                    {{ collection.image.path | image ({w: 375, h: 250, fit: 'crop'}) }} 375w,
+                    {{ collection.image.path | image ({w: 768, h: 512, fit: 'crop'}) }} 375w,
+                    {{ collection.image.path | image ({w: 992, h: 661, fit: 'crop'}) }} 768w,
+                    {{ collection.image.path | image ({w: 1280, h: 853, fit: 'crop'}) }} 992w,
+                    {{ collection.image.path | image ({w: 1400, h: 933, fit: 'crop'}) }} 1280w"
+                    src="{{ collection.image.path | image ({w: 1400, h: 933, fit: 'crop'}) }}"
+                alt="{{ collection.title }}">
+            <span class="title">{{ collection.title }}</span>
+            <div class="content">
+                <div class="inner-wrapper">
+                    <h3 class="title">{{ collection.title }}</h3>
+                    <h2 class="text">{{ collection.text }}</h2>
+                    {% include "partials/vectors/icon-arrow.svg" %}
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>

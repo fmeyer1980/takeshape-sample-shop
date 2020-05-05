@@ -5,9 +5,6 @@ query {
       _contentTypeName
       _enabledAt
       name
-      category {
-        title
-      }
       image {
         path
       }
@@ -21,6 +18,16 @@ query {
       price
       salePrice
       soldOut
+      categorySet {
+        items {
+          title
+        }
+      }
+      brandsSet {
+        items {
+          brandName
+        }
+      }
     }
   }
 }

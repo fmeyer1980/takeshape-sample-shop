@@ -1,0 +1,37 @@
+<div class="[ header ]" x-data="{ isOpen: false }">
+    <a class="[ logo ]" href="/" aria-label="Gå til forsiden">{% include "partials/vectors/logo.svg" %}</a>
+    <nav class="main-nav">
+        <ul class="main-nav__menu">
+            {% for item in site.collection.items %}
+                <li class="main-nav__menu__item{% if item.title === collection.title %} active{% endif %}">
+                    <a class="collection" href="{{ item | route('collection') }}">{{ item.title }}</a>
+                </li>
+            {% endfor %}
+            <li class="main-nav__menu__item">
+                <a href="">{{ site.faq.title }}</a>
+            </li>
+            <li class="main-nav__menu__item">
+                <a href="">{{ site.faq.title }}</a>
+            </li>
+        </ul>
+    </nav>
+
+    <ul class="[ user-nav ]">
+        <li>
+            <a href="">{% include "partials/vectors/icon-help.svg" %}</a>
+        </li>
+        <li>
+            <a href="">{% include "partials/vectors/icon-acount-user.svg" %}</a>
+        </li>
+        <li>
+            <a href="">{% include "partials/vectors/icon-bag.svg" %}</a>
+        </li>
+    </ul>
+    <button class="[ dropdown-menu ] [ md:d-none ]" @click="isOpen = !isOpen" :class="{'active': isOpen}" aria-label="Toggel menu">
+        <span x-show="!isOpen">{% include "partials/vectors/icon-dropdown-menu-open.svg" %}</span>
+        <span x-show="isOpen">{% include "partials/vectors/icon-dropdown-menu-close.svg" %}</span>
+    </button>
+    {# {% include "components/mobil-nav.njk" %} #}
+</div>
+<div class="header-push"></div>
+

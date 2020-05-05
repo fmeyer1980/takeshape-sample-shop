@@ -1,12 +1,11 @@
 <!doctype html>
-
 <html>
 <head>
   <title>{% block title %}{{ site.settings.siteTitle }}{% if page.title %} - {{ page.title }}{% endif %}{% endblock %}</title>
 
   <meta charset="utf-8">
 
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700" rel="stylesheet">
+  {# <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700" rel="stylesheet">
 
   <link rel="stylesheet" href="/stylesheets/base.css"/>
   <link rel="stylesheet" href="/stylesheets/feature.css"/>
@@ -15,21 +14,26 @@
   <link rel="stylesheet" href="/stylesheets/hero.css"/>
   <link rel="stylesheet" href="/stylesheets/pagination.css"/>
   <link rel="stylesheet" href="/stylesheets/products.css"/>
-  <link rel="stylesheet" href="/stylesheets/thumb.css"/>
+  <link rel="stylesheet" href="/stylesheets/thumb.css"/> #}
 
   <link rel="author" href="humans.txt"/>
 
   <style>
     color: {{ site.settings.color.hex }};
+    {% include "/data/tmp/css/reset.css" %}
+    {% include "/data/tmp/css/global.css" %}
+    {% include "/data/tmp/css/utilities.css" %}
+    {% include "/data/tmp/css/components/headers/"+(site.settings.headerStyle)+".css" %}
+    {% block css %}
+      
+    {% endblock %}
   </style>
 </head>
 
 <body>
-{% include "partials/header.html" %}
+{% include "components/headers/"+(site.settings.headerStyle)+".njk" %}
 
-<div class="main">
-  {% block content %}{% endblock %}
-</div>
+{% block content %}{% endblock %}
 
 {% include "partials/footer.html" %}
 

@@ -1,21 +1,21 @@
 {% extends "layouts/default.html" %}
 
 {% block content %}
-  <header class="header">
+  {# <header class="header">
     <div class="container">
       <h1>{{ category.title }}</h1>
     </div>
-  </header>
+  </header> #}
 
-  {% include "partials/categories.html" %}
+  {# {% include "partials/categories.html" %} #}
 
-  <div class="thumb-list thumb-list--two">
+  {# <div class="thumb-list thumb-list--two">
     <div class="container">
       <ul>
         {% for product in category.productSet.items %}
           <li>
             <a href="{{ product | route('product') }}">
-              <img src="{{ product.image.path | image }}"/>
+              <img src="{{ product.image.path | image({h: 200, w: 300, fit: 'crop'}) }}"/>
 
               <h3>{{ product.name }}</h3>
 
@@ -35,5 +35,5 @@
         <a href="/products" class="button">View more products</a>
       </div>
     </div>
-  </div>
+  </div> #}
 {% endblock %}

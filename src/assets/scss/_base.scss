@@ -1,0 +1,33 @@
+body{
+    font-family: var(--base-font);
+    font-weight: 400;
+    font-size: calc(var(--size-100) + 1.6px);
+    background-color: var(--color-light-gray-light);
+    color: var(--color-black);
+    line-height: 1.4;
+}
+
+a{
+    color: var(--color-black);
+}
+
+::-moz-selection{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  
+.container{
+      padding-left: calc(((100% - var(--container-width)) / 2) - var(--gutter));
+      padding-right: calc(((100% - var(--container-width)) / 2) - var(--gutter));
+      border-left: var(--gutter) solid transparent;
+      border-right: var(--gutter) solid transparent;
+
+      &-fluid{
+          padding-left: var(--gutter);
+          padding-right: var(--gutter);
+      }
+}
+
+// .main{
+
+// }

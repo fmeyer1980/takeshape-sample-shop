@@ -1,0 +1,60 @@
+h1, h2, h3, h4, h5, h6, 
+.h1, .h2, .h3, .h4, .h5, .h6{
+    font-family: var(--heading-font);
+    color: inherit;
+    line-height: 1.1;
+    font-weight: 700;
+}
+
+h1, .h1{
+    font-size: var(--size-600);
+    margin-top: 0;
+}
+
+h2, .h2{
+    font-size: var(--size-500);
+}
+
+h3, .h3{
+    font-size: var(--size-400);
+}
+
+h4, .h4{
+    font-size: var(--size-300);
+}
+
+h5, .h5{
+    font-size: var(--size-200);
+}
+
+h6, .h6{
+    font-size: var(--size-100);
+}
+
+.text{
+    &--large{
+        font-size: 2rem
+    }
+
+    &--small{
+        font-size: 1.2rem
+    }
+}
+
+.manchet{
+    font-size: 1.2rem;
+    color: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    // margin-bottom: 2em;
+}
+
+.title{
+
+    &-small{
+        font-size: .85rem;
+        letter-spacing: 1px;
+        opacity: .7;
+    }
+    
+}

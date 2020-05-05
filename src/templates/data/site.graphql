@@ -4,11 +4,15 @@ query {
      color {
       hex
     }
+    headerStyle
   }
-  categories: getCategoryList {
+  collection: getCollectionList {
     total
     items {
       title
     }
+  }
+  faq: getFaq{
+    title
   }
 }
